@@ -1,5 +1,8 @@
 .composition {
   position: relative;
+  @include respond(phone) {
+    margin-bottom: 15rem;
+  }
 
   &__photo {
     width: 30%;
@@ -10,19 +13,28 @@
     transition: all 0.2s;
     outline-offset: 2rem;
 
+    @include respond(phone) {
+      width: 50%;
+    }
+
     &--p1 {
       left: 12rem;
       top: 2rem;
     }
 
     &--p2 {
-      right: 10rem;
+      right: 9rem;
       top: 4rem;
     }
 
     &--p3 {
       left: 0rem;
       top: 5rem;
+
+      @include respond(phone) {
+        top: 1rem;
+        left: -2rem;
+      }
     }
 
     &:hover {

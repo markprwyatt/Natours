@@ -1,7 +1,48 @@
 @mixin clearfix {
-    &:after {
-        content: '';
-        display: table;
-        clear: both;
-    }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// media query manager
+
+/* 
+0-600       phone
+600-900     tablet-portrait
+900-1200    tablet landscape
+1200-1800   desktop/normal styles apply
+1800+       large desktop
+
+ phone
+tabport
+tabland
+bigdesktop
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    } //600px
+  }
+
+  @if $breakpoint == tabport {
+    @media (max-width: 900px) {
+      @content;
+    } //900px
+  }
+
+  @if $breakpoint == tabland {
+    @media (max-width: 1200px) {
+      @content;
+    } //1200px
+  }
+
+  @if $breakpoint == bigdesktop {
+    @media (min-width: 1800px) {
+      @content;
+    } //1800px
+  }
 }

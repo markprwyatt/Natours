@@ -12,6 +12,17 @@
     );
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(1, -0.14, 0.79, 0.93);
+
+    @include respond(tabport) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 2.5rem;
+      right: 2.5rem;
+    }
+
     // transform: scale(80);
   }
 
@@ -27,6 +38,16 @@
     box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tabport) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 2rem;
+      right: 2rem;
+    }
   }
 
   &__checkbox {
